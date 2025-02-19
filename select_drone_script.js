@@ -21,8 +21,8 @@ function populateDroneList() {
         const listItem = document.createElement("li");
         listItem.textContent = drone.name;
         listItem.classList.add("drone-item");
-        listItem.dataset.index = index; // Stocker l'index du drone dans l'attribut data
-        listItem.addEventListener("click", () => displayDroneData(index));
+        listItem.dataset.index = index; // Store the index in a data attribute
+        listItem.addEventListener("click", () => navigateToDashboard(index));
         droneList.appendChild(listItem);
     });
 }
