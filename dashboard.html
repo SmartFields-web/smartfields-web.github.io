@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Bord des Drones</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+<body>
+    <div class="dashboard">
+        
+        <aside class="sidebar">
+            <h2>Drones Disponibles</h2>
+            <ul id="drone-list"></ul>
+        </aside>
+        <main class="content">
+            <button id="back-button" onclick="window.location.href='drone_select_screen.html'">Retour à la sélection</button>
+            <h2 id="drone-name">Sélectionnez un drone</h2>
+            <div class="control-zone">
+                <h3>Contrôle du Drone</h3>
+                <div class="control-drone">
+                    <button onclick="callDroneBack()">Rappeler le Drone</button>
+                    <!-- Container for field buttons -->
+                    <div id="field-buttons"></div>
+                </div>
+            </div>
+            <div class="data">
+                <p><strong>Température :</strong> <span id="temperature"></span> °C</p>
+                <p><strong>Humidité :</strong> <span id="humidity"></span> %</p>
+                <p class="data" id="tank" style="display: none;">
+                    <strong>Stockage restant :</strong> <span id="tank-value"></span> mL
+                </p>
+                <p><strong>Temps restant :</strong> <span id="remaining-time"></span></p>
+            </div>
+            <div class="progress-container">
+                <p><strong>Progression de la mission :</strong></p>
+                <div id="progress-bar-container">
+                    <div id="progress-bar">
+                        <span id="progression"></span>
+                    </div>
+                </div>
+            </div>
+            <div id="map"></div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
