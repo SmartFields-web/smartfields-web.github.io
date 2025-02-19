@@ -14,12 +14,15 @@ let map, marker;
 function populateDroneList() {
     const droneList = document.getElementById("drone-list");
 
-    drones.forEach((drone, index) => {
+    // Sort drones by ID
+    const sortedDrones = drones.sort((a, b) => a.id.localeCompare(b.id));
+
+    sortedDrones.forEach((drone, index) => {
         const listItem = document.createElement("li");
         listItem.textContent = drone.name;
         listItem.classList.add("drone-item");
-        listItem.dataset.index = index; // Store the index in a data attribute
-        listItem.addEventListener("click", () => navigateToDashboard(index));
+        listItem.dataset.index = index; // Stocker l'index du drone dans l'attribut data
+        listItem.addEventListener("click", () => displayDroneData(index));
         droneList.appendChild(listItem);
     });
 }
