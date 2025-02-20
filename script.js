@@ -209,6 +209,20 @@ function populateFieldButtons() {
     });
 }
 
+// Function to update the back button text on mobile
+function updateBackButtonText() {
+    const backButton = document.getElementById("back-button");
+    if (window.innerWidth <= 768) {
+        backButton.textContent = "Retour";
+    } else {
+        backButton.textContent = "Retour à la sélection";
+    }
+}
+
+// Update the back button text on load and on resize
+window.addEventListener("DOMContentLoaded", updateBackButtonText);
+window.addEventListener("resize", updateBackButtonText);
+
 // Charger la liste de drones et initialiser la carte au chargement
 document.addEventListener("DOMContentLoaded", () => {
     populateDroneList();

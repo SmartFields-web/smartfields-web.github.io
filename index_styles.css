@@ -51,3 +51,14 @@ body {
 #drone-list {
     color: #FFFFF0;
 }
+
+#title {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #336300;
+    color: #FFFFF0;
+    padding: 10px 0;
+    font-size: 24px;
+}
